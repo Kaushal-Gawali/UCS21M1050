@@ -8,7 +8,7 @@ export default function App() {
   useEffect(() => {
     axios.get("http://localhost:3030/product")
       .then(res => {
-        const products = res.data.Products;
+        const products = res.data.product;
 
         if (products.length > 0) {
           const columns = Object.keys(products[0]);
