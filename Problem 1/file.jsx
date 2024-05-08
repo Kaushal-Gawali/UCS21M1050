@@ -6,13 +6,11 @@ export default function App() {
   const [records, setRecords] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3030/Products")
+    axios.get("http://localhost:3030/product")
       .then(res => {
-        // Assuming res.data is in the format { "Products": [...] }
         const products = res.data.Products;
 
         if (products.length > 0) {
-          // Assuming all products have the same structure
           const columns = Object.keys(products[0]);
           setCol(columns);
           setRecords(products);
